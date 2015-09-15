@@ -5,7 +5,7 @@ class egs extends CI_Controller {
 
 	public function welcome()
 	{
-        /*
+        
         $this->load->helper('form');
         $this->load->helper('url');
         $this->load->helper('egs');
@@ -30,7 +30,7 @@ EOF;
         $this->load->view('welcome_msg2');
         //$test['something'] = egs2();
         //$this->load->view('welcome_msg2',$test);
-        */
+        
         
        
     }

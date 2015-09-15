@@ -1,4 +1,5 @@
 <?php
+echo 'Wuaow!';
 /*
 <strong>CODEIGNITER TEST PAGE WITH HELPER</strong><br>
 
