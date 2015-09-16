@@ -1,1 +1,0 @@
-Registered Thank you

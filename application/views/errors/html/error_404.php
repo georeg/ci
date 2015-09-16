@@ -57,8 +57,8 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo 'aaa'; ?></h1>
-		<?php echo 'bbb'; ?>
+		<h1><?php echo 'ERROR 404 !!'; ?></h1>
+		<?php echo '   You are trying to access an non-existant page. Please create your page here.'; ?>
 	</div>
 </body>
 </html>
