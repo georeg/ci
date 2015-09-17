@@ -13,9 +13,20 @@ foreach ($res_ind as $key => $val)
     |&nbsp;
     <?php
     }
+/*    
+foreach ($input_industry as $key => $val)
+    {
+    echo $val;
+    echo form_hidden('industry_id[]',$val);
+    ?>
+    |&nbsp;
+    <?php
+    }
+*/    
 ?> 
 <br>
 Occupation: <?php 
+
 foreach ($res_occ as $key => $val)
     {
     echo $val;
@@ -24,6 +35,16 @@ foreach ($res_occ as $key => $val)
     |&nbsp;
     <?php
     }
+/*   
+foreach ($input_occupation as $key => $val)
+    {
+    echo $val;
+    echo form_hidden('occupation_id[]',$val);
+    ?>
+    |&nbsp;
+    <?php
+    }
+*/    
 ?> 
 
 
@@ -33,8 +54,8 @@ echo form_hidden('username',$username);
 echo form_hidden('address',$address);
 echo form_hidden('phone',$phone);
 echo form_hidden('email',$email);
-echo form_hidden('industry[]',$res_ind);
-echo form_hidden('occupation[]',$res_occ);
+echo form_hidden('industry_id[]',$input_industry);
+echo form_hidden('occupation_id[]',$input_occupation);
 ?>
 <?php echo form_submit('confirm', 'Confirm'); ?><br><br>
 <?php echo form_close(); ?>

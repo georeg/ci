@@ -9,9 +9,39 @@ class admin extends CI_Controller
         $this->load->helper('form');
         $this->load->helper('url');
     }
- 
+    
+    public function login()
+    {
+        $this->load->view('admin_login');
+    }
+    
+    public function login_action()
+    {
+        $this->load->library('session');
+        $name = $this->input->post('admin_name');
+        $password = $this->input->post('admin_password');
+        
+        $this->load->model('Service_admin');
+        $ret =  $this->Service_admin->is_user($name,$password);
+        
+            if ($ret) {
+            //set session
+            $admin = array('username' => $ret[0]['id']);
+            $this->session->set_userdata($admin);
+            
+            //redirect to mypage
+            redirect(base_url().'admin/top');
+            } else {
+            //redirect login page to back
+            redirect(base_url().'admin/login');
+            }
+    }
+    
     public function top()
     {
+        $this->load->library('session');
+        $session = $this->session->userdata('username');
+        
         $this->load->view('admin_top');
     }
     
@@ -86,6 +116,24 @@ class admin extends CI_Controller
         
         $this->load->view('occupation_info',$ret);
     }
+    
+// USER ACTION
+    public function user_list()
+    {
+        $this->load->Model('Service_user');
+        $user_list = $this->Service_user->get_user_list();
+        $data['user_list'] = $user_list;
+
+        $this->load->view('user_list',$data);
+    }
+    
+    public function user_detail($id) 
+    {
+        $this->load->Model('Service_user');
+        $ret['user_detail'] = $this->Service_user->get_user_detail($id);
+       
+        $this->load->view('user_detail',$ret);
+    }    
         
 }
 ?>

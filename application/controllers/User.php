@@ -62,18 +62,21 @@ class user extends CI_Controller
         $data['address'] = $this->input->post('address');
         $data['phone'] = $this->input->post('phone');
         $data['email'] = $this->input->post('email');
-        $data['input_industry'] = $this->input->post('industry');
-        $data['input_occupation'] = $this->input->post('occupation');
-        print"<pre>";
-        var_dump($data);
-        exit;
-        $this->load->model('User');
-        $res = $this->User->register_user($data);
+        $data['input_industry'] = $this->input->post('industry_id');
+        $data['input_occupation'] = $this->input->post('occupation_id');
+        
+        $this->load->Model('Service_user');
+        $res = $this->Service_user->register_user($data);
             if ($res){
                 redirect(base_url().'user/complete');
             }else{
-                redirect(base_url().'user/create');
+                redirect(base_url().'lp');
             }
+    }
+    
+    public function complete()
+    {
+         $this->load->view('user_complete');
     }
     
     private function _validate() 

@@ -10,9 +10,7 @@ OCCUPATION LIST:<br>
 foreach ($occupation_list as $key => $val)
     {
     //echo anchor(base_url().'user/detail/'.$Val['id'], $val['name']);
-    echo "<a href=\"".base_url()."admin/occupation_info/".$val['occupation_id']."\">".$val['occupation_name']."</a>";
-    echo "<br>";
-    echo $val['occupation_id'];
+    echo $val['occupation_id'];?>&nbsp;&nbsp;<?php echo "<a href=\"".base_url()."admin/occupation_info/".$val['occupation_id']."\">".$val['occupation_name']."</a>";
     echo "<br>";
     echo "<br>";
     }

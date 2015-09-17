@@ -2,8 +2,9 @@
 //print "<pre>";
 //var_dump($industry_info);
 //exit;
-
-
+print"<pre>";
+var_dump($industry_info);
+exit;
 echo $industry_info['0']['industry_id'];
 echo "<br>";
 echo $industry_info['0']['industry_name'];

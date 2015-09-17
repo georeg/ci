@@ -10,9 +10,7 @@ INDUSTRY LIST:<br>
 foreach ($industry_list as $key => $val)
     {
     //echo anchor(base_url().'user/detail/'.$Val['id'], $val['name']);
-    echo "<a href=\"".base_url()."admin/industry_info/".$val['industry_id']."\">".$val['industry_name']."</a>";
-    echo "<br>";
-    echo $val['industry_id'];
+    echo $val['industry_id']; ?>&nbsp;&nbsp;<?php echo "<a href=\"".base_url()."admin/industry_info/".$val['industry_id']."\">".$val['industry_name']."</a>";
     echo "<br>";
     echo "<br>";
     }
